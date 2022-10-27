@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    //GJORT AV ELLIOT 
+    //Variabler som gör att man ser i Unity
     [SerializeField]
     float speed;
     public Vector3 direction = new Vector3(0, 1, 0);
@@ -14,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Den här gör så att Objected åker neråt på bestämt hastighet
     void Update()
     {
         transform.position -= new Vector3(0, speed, 0) * Time.deltaTime;

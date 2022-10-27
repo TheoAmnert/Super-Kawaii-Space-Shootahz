@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    //GJORT AV ELLIOT 
+    //Variabler som gör att man ser i Unity
     [SerializeField]
     GameObject bullet;
     float timer;
@@ -14,6 +16,7 @@ public class EnemyBullet : MonoBehaviour
     }
 
     // Update is called once per frame
+    //Den här gör så att varje andre sekund så kommer den duplikera "Bullet" från unity
     void Update()
     {
         timer += Time.deltaTime;
