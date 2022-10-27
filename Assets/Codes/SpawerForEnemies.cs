@@ -17,7 +17,7 @@ public class SpawerForEnemies : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 5)
+        if (timer > 3)
         {
             int rng = Random.Range(0, prefabs.Length);
             Instantiate(prefabs[rng], new Vector3(Random.Range(-11, 12), 9, 0), prefabs[rng].transform.rotation);
