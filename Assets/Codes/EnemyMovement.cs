@@ -21,4 +21,16 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.position -= new Vector3(0, speed, 0) * Time.deltaTime;
     }
-}
+    //Om Obejcted kolliderar med ett annat objected med taggen "HiddenWall" kommer den att förstöras
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("touch");
+        if (collision.gameObject.tag == "HiddenWall")
+        {
+            print("Destroy");
+            Destroy(gameObject);
+            
+
+        }
+    }
+    }

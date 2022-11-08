@@ -17,4 +17,16 @@ public class EnemyBulletMovement : MonoBehaviour
     {
         transform.position -= new Vector3(0, 15, 0) * Time.deltaTime;
     }
-}
+    //Om Obejcted kolliderar med ett annat objected med taggen "HiddenWall" kommer den att förstöras
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("bullet touch");
+        if (collision.gameObject.tag == "HiddenWall")
+        {
+            print("bullet Destroy");
+            Destroy(gameObject);
+
+
+        }
+    }
+    }
