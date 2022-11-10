@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class spelare : MonoBehaviour
-{
+{ // Gjort av Oscar
     #region Variablar
     [SerializeField, Range(1, 8)]
     public float speed;
@@ -18,7 +18,9 @@ public class spelare : MonoBehaviour
 
     #endregion
     #region Health
-    private int _health = 100;
+    public int _health = 100;
+
+    public int AlienSkott = 20;
     public int health
     {
         get
@@ -30,6 +32,7 @@ public class spelare : MonoBehaviour
             if (value <= 0)
             {
                 _health = 0;
+                Destroy(gameObject); // Om hp blir 0 så dör spelaren
             }
             else if (value >= 100)
             {
@@ -40,13 +43,22 @@ public class spelare : MonoBehaviour
                 _health = value;
             }
         }
+        
+    }
+    public void OnCollisionEnter(Collision collision) // Om man blir träffat av "Alienskott" så förlorar man hp och även aktiverar camerashake
+    {
+        if (collision.gameObject.tag == "AlienSkott")
+        {
+            _health -= AlienSkott;
+            CameraShake.shakeDuration = 0.5f;
+        }
     }
     #endregion
 
     void Update()
     {
         #region Movement
-        if (Input.GetKey(right))
+        if (Input.GetKey(right)) // Simpel rörelse kod, om man trycker A så ändras vector värdet´så man rör sig vänster, D ändras till höger
         {
             transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             print("Hej");
@@ -59,7 +71,7 @@ public class spelare : MonoBehaviour
         }
         #endregion
         #region Shooting
-        if (Input.GetKeyDown(shoot))
+        if (Input.GetKeyDown(shoot)) // Om man trycker på skjut knappen så skapas en bullet, från en prefab
         {
             Instantiate(bullet, transform.position, bullet.transform.rotation);
         }
