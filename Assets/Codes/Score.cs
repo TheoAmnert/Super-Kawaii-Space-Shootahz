@@ -19,6 +19,6 @@ public class Score : MonoBehaviour
     void Update()
     {
 
-        scoreText.text = "Score " + Player1Score.ToString();
+        scoreText.text = "Kill-count " + Player1Score.ToString();
     }
 }
