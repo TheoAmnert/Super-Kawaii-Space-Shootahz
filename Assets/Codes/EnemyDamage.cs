@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-
+    //Score Av Axel
+    Score score;
     //GJORT AV ELLIOT 
     // Start is called before the first frame update
     void Start()
     {
-
+        score = FindObjectOfType<Score>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (collision.gameObject.tag == "Skott")
         {
+           score.Player1Score += 50;
             Destroy(gameObject);
         }
     }
