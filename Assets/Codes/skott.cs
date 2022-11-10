@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class skott : MonoBehaviour
 {
-   
+   // Gjort av Oscar, koden för att bulleten ska röra sig uppåt
     void Start()
     {
 

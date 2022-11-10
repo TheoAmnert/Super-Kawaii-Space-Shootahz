@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     //Variabler som gör att man ser i Unity
     [SerializeField]
     float speed;
-    public Vector3 direction = new Vector3(0, 1, 0);
+    
     // Start is called before the first frame update
     void Start()
     {
