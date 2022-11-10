@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    
- 
+
+    //GJORT AV ELLIOT 
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class EnemyDamage : MonoBehaviour
     {
 
     }
-
+    //den här gör så att om objected kolliderar med andra object med taggen "Player" eller "Skott" kommer den här objected förstöras
     private void OnCollisionEnter(Collision collision)
     {
 

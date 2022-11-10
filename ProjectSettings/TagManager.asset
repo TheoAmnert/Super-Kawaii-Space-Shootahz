@@ -8,6 +8,7 @@ TagManager:
   - Skott
   - Alien
   - HiddenWall
+  - AlienSkott
   layers:
   - Default
   - TransparentFX
