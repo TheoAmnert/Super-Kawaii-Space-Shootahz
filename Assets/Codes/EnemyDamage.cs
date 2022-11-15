@@ -30,7 +30,11 @@ public class EnemyDamage : MonoBehaviour
 
         if (collision.gameObject.tag == "Skott")
         {
-           score.Player1Score += 50;
+            if (score != null)
+            {
+                score.Player1Score += 50;
+            }
+           
             Destroy(gameObject);
         }
     }
